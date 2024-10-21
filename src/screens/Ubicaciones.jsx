@@ -1,4 +1,45 @@
-import { DTable, Footer, Menu, Navbar, Title } from "../components"
+import { DTable, Footer, Menu, Navbar, Title } from "../components";
+
+const columnas = [
+    {
+        name: 'Identificador',
+        selector: row=> row.matricula
+    },
+    {
+        name: 'Ubicación',
+        selector: row=> row.nombre
+    },
+    {
+        name: 'Opciones',
+        selector: row => row.action,
+        cell: (props) => (
+            <button className="btn btn-info btn-sm" title="Editar ubicación">
+                <i className="fas fa-pen"></i>
+            </button>
+        ),
+        ignoreRowClick: true,
+        allowOverflow: true,
+        button: true
+    }
+];
+const data = [
+    {
+        id: 1,
+        matricula: "ZAQ0001",
+        nombre: "Administración",
+        cell: (props) => (
+            <button>Editar</button>
+        )
+    },
+    {
+        id: 2,
+        matricula: "ZAQ0002",
+        nombre: "Recepción",
+        cell: (props) => (
+            <button>Editar</button>
+        )
+    },
+]
 
 export const Ubicaciones = () => {
     return (
@@ -13,33 +54,13 @@ export const Ubicaciones = () => {
                         <div className="col-4">
                             <div className="card card-primary">
                                 <div className="card-header">
-                                    <h4 className="card-title">Agregar persona</h4>
+                                    <h4 className="card-title">Agregar ubicaciones</h4>
                                 </div>
                                 <div className="card-body">
                                     <form>
                                         <div className="form-group">
-                                            <label>Matricula/Identificador/No. de empleado</label>
-                                            <input className="form-control" placeholder="NX02154" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Nombre(s)</label>
-                                            <input className="form-control" placeholder="Alfredo" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Apellido Paterno</label>
-                                            <input className="form-control" placeholder="Adame" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Apellido Materno</label>
-                                            <input className="form-control" placeholder="Buenrostro" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Teléfono</label>
-                                            <input className="form-control" placeholder="111222333" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Correo electrónico</label>
-                                            <input className="form-control" placeholder="yomero@correo.net" />
+                                            <label>Nombre de la ubicación</label>
+                                            <input className="form-control" placeholder="Edificio de administración" />
                                         </div>
                                     </form>
                                 </div>
@@ -52,10 +73,10 @@ export const Ubicaciones = () => {
                         <div className="col-8">
                             <div className="card card-primary">
                                 <div className="card-header">
-                                    <h4 className="card-title">Personas registradas</h4>
+                                    <h4 className="card-title">Ubicaciones registradas</h4>
                                 </div>
                                 <div className="card-body">
-                                    <DTable />
+                                    <DTable cols={ columnas } info={ data } />
                                 </div>
                             </div>
                         </div> 

@@ -13,33 +13,41 @@ export const Informes = () => {
                         <div className="col-4">
                             <div className="card card-primary">
                                 <div className="card-header">
-                                    <h4 className="card-title">Agregar persona</h4>
+                                    <h4 className="card-title">Seleccionar filtros</h4>
                                 </div>
                                 <div className="card-body">
                                     <form>
                                         <div className="form-group">
-                                            <label>Matricula/Identificador/No. de empleado</label>
-                                            <input className="form-control" placeholder="NX02154" />
+                                            <label>Empleado</label>
+                                            <select className="form-control">
+                                                <option>-Todos-</option>
+                                                <option>Juan Pérez</option>
+                                                <option>Laura Sánchez</option>
+                                            </select>
                                         </div>
                                         <div className="form-group">
-                                            <label>Nombre(s)</label>
-                                            <input className="form-control" placeholder="Alfredo" />
+                                            <label>Ubicación</label>
+                                            <select className="form-control">
+                                                <option>-Todas-</option>
+                                                <option>Administración</option>
+                                                <option>Recepción</option>
+                                            </select>
                                         </div>
                                         <div className="form-group">
-                                            <label>Apellido Paterno</label>
-                                            <input className="form-control" placeholder="Adame" />
+                                            <label>Tipo de artículo</label>
+                                            <select className="form-control">
+                                                <option>-Todos los tipos-</option>
+                                                <option>Muebles</option>
+                                                <option>Equipo de cómputo</option>
+                                                <option>Equipo de laboratorio</option>
+                                                <option>Artículo de laboratorio</option>
+                                                <option>Artículo general</option>
+                                                <option>Otro</option>
+                                            </select>
                                         </div>
                                         <div className="form-group">
-                                            <label>Apellido Materno</label>
-                                            <input className="form-control" placeholder="Buenrostro" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Teléfono</label>
-                                            <input className="form-control" placeholder="111222333" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label>Correo electrónico</label>
-                                            <input className="form-control" placeholder="yomero@correo.net" />
+                                            <label>Tipo de artículo</label>
+                                            <input type="date" className="form-control"/>
                                         </div>
                                     </form>
                                 </div>

@@ -1,3 +1,4 @@
+import QRCode from "react-qr-code";
 import { DTable, Footer, Menu, Navbar, Title } from "../components";
 
 const columnas = [
@@ -17,6 +18,10 @@ const columnas = [
         name: 'Ubicación',
         selector: row=> row.ubicacion
     },
+    {
+        name: 'Opciones',
+        selector: row => row.action
+    }
 ];
 
 const data = [
@@ -26,6 +31,9 @@ const data = [
         nombre: "Mesa binaria",
         tipo: "Mueble de oficina",
         ubicacion: "Edificio D5 - 211",
+        cell: (props) => (
+            <button>Editar</button>
+        )
     },
     {
         id: 2,
@@ -33,6 +41,9 @@ const data = [
         nombre: "CPU - HP Elite C800",
         tipo: "Equipo de computo",
         ubicacion: "Edificio D5 - 211",
+        cell: (props) => (
+            <button>Editar</button>
+        )
     },
 ]
 
@@ -87,7 +98,7 @@ export const Mobiliario = () => {
                                 </div>
                                 <div className="card-footer">
                                     <button className="btn btn-secondary">Cancelar</button>
-                                    <button className="btn btn-lg btn-primary float-right">Aceptar</button>
+                                    <button className="btn btn-lg btn-primary float-right" data-toggle="modal" data-target="#modal-default">Aceptar</button>
                                 </div>
                             </div>
                         </div>
@@ -106,6 +117,26 @@ export const Mobiliario = () => {
                 </section>
             </div>
             <Footer />
+
+            <div className="modal fade" id="modal-default" >
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h4 className="modal-title">Default Modal</h4>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <QRCode value="Este es mi código QR" />
+                        </div>
+                        <div className="modal-footer justify-content-between">
+                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
