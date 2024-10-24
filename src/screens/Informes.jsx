@@ -1,4 +1,4 @@
-import { DTable, Footer, Menu, Navbar, Title } from "../components"
+import { BarsChart, DTable, Footer, Menu, Navbar, PieChart, Title } from "../components"
 
 export const Informes = () => {
     return (
@@ -58,12 +58,36 @@ export const Informes = () => {
                             </div>
                         </div>
                         <div className="col-8">
-                            <div className="card card-primary">
-                                <div className="card-header">
-                                    <h4 className="card-title">Personas registradas</h4>
+                            <div className="row">
+                                <div className="col-12">
+                                    <div className="card card-primary">
+                                        <div className="card-header">
+                                            <h4 className="card-title">Resultados</h4>
+                                        </div>
+                                        <div className="card-body">
+                                            <PieChart />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="card-body">
-                                    <DTable />
+                                <div className="col-12">
+                                    <div className="card card-primary">
+                                        <div className="card-header">
+                                            <h4 className="card-title">Resultados</h4>
+                                        </div>
+                                        <div className="card-body">
+                                            <BarsChart />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-12">
+                                    <div className="card card-primary">
+                                        <div className="card-header">
+                                            <h4 className="card-title">Resultados</h4>
+                                        </div>
+                                        <div className="card-body">
+                                            <DTable />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div> 
