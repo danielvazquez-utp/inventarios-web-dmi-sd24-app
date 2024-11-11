@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { DTable, Footer, Menu, Navbar, Title } from "../components";
+import { useFetchVer2 } from "../hooks/useFetchVer2";
 
 const columnas = [
     {
@@ -42,6 +44,18 @@ const data = [
 ]
 
 export const Ubicaciones = () => {
+
+    const { getData } = useFetchVer2();
+
+    const getUbicaciones = async() => {
+        const ubicaciones = await getData('http://localhost/codeigniter3-rest-controller/index.php/Api/Ubicacion');
+        console.log(ubicaciones);
+    }
+    
+    useEffect(() => {
+        getUbicaciones();
+    }, [])
+
     return (
         <>
             <Navbar />
